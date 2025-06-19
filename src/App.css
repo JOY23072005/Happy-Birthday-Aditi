@@ -1,0 +1,264 @@
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #333;
+  line-height: 1.6;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  color: white;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.icon {
+  margin: 0 0.5rem;
+  vertical-align: middle;
+}
+
+.cake {
+  color: #fffacd;
+  font-size: 2.5rem;
+  animation: bounce 2s infinite;
+}
+
+.heart {
+  color: #ff6b6b;
+  animation: beat 1.5s infinite;
+}
+
+.sad {
+  color: #5d6d7e;
+  margin-right: 0.5rem;
+}
+
+.gift {
+  color: #f9ca24;
+  margin-left: 0.5rem;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.photo-gallery {
+  margin: 2rem auto;
+  max-width: 600px;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.photo-gallery:hover {
+  transform: translateY(-5px);
+}
+
+.photo-container {
+  position: relative;
+  padding-top: 75%; /* 4:3 aspect ratio */
+  background: #eee;
+}
+
+.sister-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+}
+
+.photo-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.photo-gallery:hover .photo-overlay {
+  opacity: 1;
+}
+
+.message-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.message-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, #ff758c, #ff7eb3);
+}
+
+.message-box h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.message-box p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.apology {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.wishes-container {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 2rem 0;
+}
+
+.wishes-container h3 {
+  font-size: 1.5rem;
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.wishes-list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.wishes-list li {
+  padding: 0.8rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.wishes-list li::before {
+  content: '🎁';
+  position: absolute;
+  left: 0.5rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  color: white;
+  font-size: 1rem;
+}
+
+.footer p {
+  margin-bottom: 0.5rem;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes beat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  40% { transform: scale(1); }
+  60% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .wishes-list {
+    grid-template-columns: 1fr;
+  }
+}
+.photo-container{
+  overflow: none;
+}
+.sister-photo:hover{
+  scale:1.05;
+}
+
+.wishes-list li:hover {
+  cursor: pointer;
+  background-color: #ff7eb3;
+  color:white;
+  scale:1.05;
+}
